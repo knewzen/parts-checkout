@@ -3,24 +3,34 @@ import {connect} from 'react-redux'
 import PropTypes from 'prop-types'
 import {LOGIN_AUTH, LOGIN_AUTH_PENDING} from 'actions'
 import LoginComponent from './components'
+import { Redirect } from 'react-router-dom'
 
 class Login extends Component {
 	static propTypes = {
 		login: PropTypes.func.isRequired,
-		errors: PropTypes.object.isRequired
+		errors: PropTypes.object.isRequired,
+		isLoggedIn: PropTypes.bool.isRequired
 	}
 
 	render () {
-		const {login, errors} = this.props
+		const {login, errors, isLoggedIn} = this.props
 		const props = {login, errors}
-		return <LoginComponent {...props} />
+
+		return (
+			isLoggedIn ? (
+				<Redirect to='/' />
+			) : (
+				<LoginComponent {...props} />
+			))
 	}
 }
 
 function mapStateToProps (state) {
-	const {errors} = state.me.auth
+	const { errors, isLoggedIn } = state.me.auth
+
 	return {
-		errors
+		errors,
+		isLoggedIn
 	}
 }
 

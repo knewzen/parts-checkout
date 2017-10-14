@@ -20,14 +20,14 @@ export default class LoginComponent extends Component {
 		errors: PropTypes.object
 	}
 
-	handleSubmit (e) {
+	handleSubmit = (e) => {
 		e.preventDefault()
 		const {login} = this.props
 		const {username, password} = this.state
 		login({username, password})
 	}
 
-	handleChange (e, {name, value}) {
+	handleChange = (e, {name, value}) => {
 		this.setState({
 			[name]: value
 		})
@@ -57,7 +57,7 @@ export default class LoginComponent extends Component {
 				</Helmet>
 				<Grid.Row>
 					<Grid.Column tablet={10} mobile={16} computer={6}>
-						<Form onSubmit={::this.handleSubmit} {...loginFormProps}>
+						<Form onSubmit={this.handleSubmit} {...loginFormProps}>
 							{errors &&
 								<Message
 									error
@@ -69,7 +69,7 @@ export default class LoginComponent extends Component {
 								name="username"
 								label="Username"
 								value={username}
-								onChange={::this.handleChange}
+								onChange={this.handleChange}
 							/>
 							<Form.Input
 								placeholder="Password"
@@ -77,7 +77,7 @@ export default class LoginComponent extends Component {
 								name="password"
 								label="Password"
 								value={password}
-								onChange={::this.handleChange}
+								onChange={this.handleChange}
 							/>
 							<TextCenter>
 								<LoginButton {...loginBtnProps} />

@@ -12,6 +12,7 @@ export const LOGIN_AUTH_FAIL = 'LOGIN_AUTH_FAIL'
 export const LOGOUT_AUTH_SUCCESS = 'LOGOUT_AUTH_SUCCESS'
 
 export const LOGIN_AUTH = async data => {
+	console.log('Loggin in ' + JSON.stringify(data))
 	const result = await loginAPI(data)
 	if (!resultOK(result)) {
 		return {type: LOGIN_AUTH_FAIL, errors: result.data}
