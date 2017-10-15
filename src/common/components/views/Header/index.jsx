@@ -43,7 +43,7 @@ class Header extends Component {
                     </Menu.Item>
                 </Link>
                 <Menu.Menu position='right'>
-                    <Menu.Item name='Sign Up' as={Link} to='/signup' />
+                    { !isLoggedIn && <Menu.Item name='Sign Up' as={Link} to='/signup' />}
                     { isLoggedIn ? (
                         <Menu.Item name='logout' onClick={logout} />
                     ) : (

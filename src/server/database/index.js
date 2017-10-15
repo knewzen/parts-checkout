@@ -10,12 +10,12 @@ module.exports = {
         })
     },
 
-    authUser ({username, password}) {
-        console.log(`Add user ${username} with password ${password}`)
-        console.log(JSON.stringify({username, password}))
-        return knex('user').insert({
-            username,
-            password
-        })
+    authUser ({username}) {
+        console.log(`Ath user ${username}`)
+        console.log(JSON.stringify({username}))
+        return knex('user').where({
+            username
+        }).select('id', 'hash').first()
     }
+
 }
