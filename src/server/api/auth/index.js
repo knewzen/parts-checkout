@@ -1,7 +1,8 @@
 import {Router} from 'express'
 import jwt from 'jsonwebtoken'
 import chalk from 'chalk'
-var bcrypt = require('bcrypt')
+import bcrypt from 'bcrypt'
+
 const saltRounds = 10
 // import {JWT_TOKEN} from 'common/api'
 // {isLength, trim, isAlphanumeric, escape}
@@ -12,7 +13,7 @@ router.post('/', (req, res) => {
 	const {username, password} = req.body
 	const data = { username }
 	var hash = bcrypt.hashSync(password, saltRounds)
-	console.log(hash)
+	console.log(chalk.yellow(hash))
 
 	jwt.sign(data, process.env.JWT_SECRET, {expiresIn: '7d'}, (err, token) => {
 		if (err) {
