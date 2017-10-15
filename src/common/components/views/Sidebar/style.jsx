@@ -22,7 +22,7 @@ export const SidebarLogoContainer = styled.a`
   ${media.md`
     padding: 25px;
   `};
-	${media.lg`
+    ${media.lg`
     padding: 20px;
   `};
 `
