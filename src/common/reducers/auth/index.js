@@ -1,7 +1,9 @@
 import {isLoggedIn, getLocalToken} from 'api'
 import {
+	LOGIN_AUTH_PENDING,
 	LOGIN_AUTH_FAIL,
 	LOGIN_AUTH_SUCCESS,
+	SIGNUP_AUTH_PENDING,
 	LOGOUT_AUTH_SUCCESS,
 	APPLICATION_INIT
 } from 'actions'
@@ -38,6 +40,9 @@ export function auth (state = initialState, action) {
 			token
 		}
 	}
+
+	case LOGIN_AUTH_PENDING:
+	case SIGNUP_AUTH_PENDING:
 	default:
 		return state
 	}
