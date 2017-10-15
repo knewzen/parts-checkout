@@ -31,10 +31,10 @@ export const del = requestWrapper('DELETE')
  * @return {bool} - indicates was request successful or not
  */
 export function resultOK (result) {
-	if (result) {
-		const ok = result.ok
-		delete result.ok
-		return ok // Look at parseJSON
-	}
-	return false
+    if (result) {
+        const ok = result.ok
+        delete result.ok
+        return ok // Look at parseJSON
+    }
+    return false
 }

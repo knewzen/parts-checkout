@@ -5,11 +5,11 @@ import Main from '../Main'
 import {StyledApp} from './style'
 
 const App = () => (
-	<div>
-		<Header />
-		<Main />
-		<Footer />
-	</div>
+    <div>
+        <Header />
+        <Main />
+        <Footer />
+    </div>
 )
 
 export default App

@@ -9,15 +9,15 @@ import {render} from 'react-dom'
 import {configureStore, configureRootComponent} from 'common/index.jsx'
 
 if (process.env.NODE_ENV === 'production') {
-	require('common/pwa')
+    require('common/pwa')
 } else if (process.env.NODE_ENV === 'development') {
-	// Devtools
-	// NOTE: whyDidYouUpdate package is temporary broken, waiting for a patch.
+    // Devtools
+    // NOTE: whyDidYouUpdate package is temporary broken, waiting for a patch.
 
-	/*eslint-disable */
-	// NOTE: But if you really want to run `why-did-you-update`
-	// You can uncomment this block:
-	/*
+    /*eslint-disable */
+    // NOTE: But if you really want to run `why-did-you-update`
+    // You can uncomment this block:
+    /*
     Object.defineProperty(React, 'createClass', {
       set: nextCreateClass => {
         createClass = nextCreateClass
@@ -27,8 +27,8 @@ if (process.env.NODE_ENV === 'production') {
    const {whyDidYouUpdate} = require('why-did-you-update')
     whyDidYouUpdate(React)
   */
-	/* eslint-enable */
-	window.Perf = require('react-addons-perf')
+    /* eslint-enable */
+    window.Perf = require('react-addons-perf')
 }
 
 const preloadedState = window.__PRELOADED_STATE__ || {}
@@ -39,5 +39,5 @@ const RootComponent = configureRootComponent({store})
 render(RootComponent, document.getElementById('app'))
 
 if (module.hot) {
-	module.hot.accept()
+    module.hot.accept()
 }

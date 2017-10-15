@@ -11,8 +11,8 @@ export const StyledFooter = styled.footer`
   box-shadow: inset 0 0 0 0 ${props => props.theme.primaryColorDark},
     0 2px 1px 0 ${props => props.theme.primaryColorDark};
   ${media.lg`
-		margin-top: 30px;
-	`};
+        margin-top: 30px;
+    `};
 `
 
 export const StyledFooterInner = styled.div`padding: 15px 1rem;`

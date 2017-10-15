@@ -18,25 +18,25 @@ export const MainContent = styled.main`
   padding-left: 1rem;
   padding-right: 1rem;
   ${media.md`
-		padding-top: 65px;
-	`};
+        padding-top: 65px;
+    `};
   ${media.lg`
-		padding-top: 72px;
-	`};
+        padding-top: 72px;
+    `};
 `
 
 export const SidebarSemanticPusherStyled = styled(Sidebar.Pusher)`
-	height: 100%;
+    height: 100%;
   overflow-y: scroll!important;
   -webkit-overflow-scrolling: touch;
 
   ::-webkit-scrollbar {
-	  width: 0px!important;
-	}
+      width: 0px!important;
+    }
 `
 
 export const SidebarSemanticPushableStyled = styled(Sidebar.Pushable)`
-	display: initial;
+    display: initial;
 `
 
 //  Margin - just to fill empty space
@@ -45,22 +45,22 @@ export const MainContainer = styled(Container)`
   margin-bottom: 2em;
 
   &#main-container {
-		${media.mdOnly`
-			width: 100% !important;
-		`}
+        ${media.mdOnly`
+            width: 100% !important;
+        `}
 
-		${media.smOnly`
-		  width: 100% !important;
-		`}
-	}
+        ${media.smOnly`
+          width: 100% !important;
+        `}
+    }
 
-	> .grid,
-	> * > .grid {
-		min-height: 100%;
-	}
+    > .grid,
+    > * > .grid {
+        min-height: 100%;
+    }
 `
 
 export const StyledDimmer = styled(Dimmer)`
-	z-index: 55!important;
-	cursor: pointer;
+    z-index: 55!important;
+    cursor: pointer;
 `

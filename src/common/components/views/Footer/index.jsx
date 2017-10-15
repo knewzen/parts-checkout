@@ -4,17 +4,17 @@ import {Grid, Header, Icon, Container} from 'semantic-ui-react'
 import {StyledFooter, StyledFooterInner} from './style'
 
 export default class Footer extends Component {
-	shouldComponentUpdate () {
-		return false
-	}
+    shouldComponentUpdate () {
+        return false
+    }
 
-	render () {
-		return (
-			<div>
-				<Container textAlign='center'>
+    render () {
+        return (
+            <div>
+                <Container textAlign='center'>
           --Footer--
-				</Container>
-			</div>
-		)
-	}
+                </Container>
+            </div>
+        )
+    }
 }
