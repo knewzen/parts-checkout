@@ -5,7 +5,6 @@ import {Helmet} from 'react-helmet'
 import _ from 'lodash'
 import {SignupButton} from './style'
 import {TextCenter} from 'styles/base'
-import util from 'util'
 
 export default class SignUpComponent extends Component {
     constructor (props) {

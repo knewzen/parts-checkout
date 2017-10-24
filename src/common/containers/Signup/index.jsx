@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import PropTypes from 'prop-types'
-import {SIGNUP_AUTH, SIGNUP_AUTH_PENDING} from 'actions'
+import {SIGNUP_AUTH, SIGNUP_AUTH_PENDING, AUTH_CLEAR_ERRORS} from 'actions'
 import SignupComponent from './components'
 import { Redirect } from 'react-router-dom'
 
@@ -9,7 +9,8 @@ class Signup extends Component {
     static propTypes = {
         errors: PropTypes.object.isRequired,
         isLoggedIn: PropTypes.bool.isRequired,
-        signup: PropTypes.func
+        signup: PropTypes.func.isRequired,
+        clearErrors: PropTypes.func.isRequired
     }
 
     render () {
@@ -22,6 +23,11 @@ class Signup extends Component {
             ) : (
                 <SignupComponent {...props} />
             ))
+    }
+
+    componentWillUnmount () {
+        const {clearErrors} = this.props
+        clearErrors()
     }
 }
 
@@ -40,6 +46,9 @@ function mapDispatchToProps (dispatch) {
             dispatch({type: SIGNUP_AUTH_PENDING})
             const result = await SIGNUP_AUTH(data)
             return dispatch(result)
+        },
+        clearErrors: async () => {
+            dispatch({type: AUTH_CLEAR_ERRORS})
         }
     }
 }

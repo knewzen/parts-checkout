@@ -5,7 +5,6 @@ import bcrypt from 'bcrypt'
 import db from '../../database'
 import asyncMiddleware from '../../asyncMiddleware'
 
-const saltRounds = 10
 // import {JWT_TOKEN} from 'common/api'
 // {isLength, trim, isAlphanumeric, escape}
 const router = Router()

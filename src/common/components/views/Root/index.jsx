@@ -9,11 +9,6 @@ import App from 'containers/App'
 // import RoutingWrapper from 'components/addons/RoutingWrapper'
 import { BrowserRouter } from 'react-router-dom'
 
-const Router =
-        process.env.BROWSER === true
-            ? require('react-router-redux').ConnectedRouter
-            : require('react-router').StaticRouter
-
 export default class Root extends Component {
         static propTypes = {
             store: PropTypes.object,
@@ -32,12 +27,7 @@ export default class Root extends Component {
         }
 
         render () {
-            const {SSR, store, history, routes} = this.props
-            const routerProps =
-                        process.env.BROWSER === true
-                            ? {history}
-                            : {location: SSR.location, context: SSR.context}
-            // key={Math.random()} = hack for HMR from https://github.com/webpack/webpack-dev-server/issues/395
+            const {store} = this.props
             return (
                 <Provider store={store} key={Math.random()}>
                     <ThemeProvider theme={theme}>

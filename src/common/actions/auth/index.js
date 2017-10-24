@@ -5,7 +5,6 @@ import {
     resetLocalToken,
     resultOK
 } from 'api'
-import util from 'util'
 
 export const LOGIN_AUTH_PENDING = 'LOGIN_AUTH_PENDING'
 export const LOGIN_AUTH_SUCCESS = 'LOGIN_AUTH_SUCCESS'
@@ -15,9 +14,9 @@ export const SIGNUP_AUTH_PENDING = 'SIGNUP_AUTH_PENDING'
 
 export const LOGOUT_AUTH_SUCCESS = 'LOGOUT_AUTH_SUCCESS'
 
+export const AUTH_CLEAR_ERRORS = 'AUTH_CLEAR_ERRORS'
+
 export const LOGIN_AUTH = async data => {
-    console.log(data)
-    console.log('Loggin in ' + JSON.stringify(data))
     const result = await loginAPI(data)
     if (!resultOK(result)) {
         return {type: LOGIN_AUTH_FAIL, errors: result.data}
@@ -27,13 +26,7 @@ export const LOGIN_AUTH = async data => {
 }
 
 export const SIGNUP_AUTH = async data => {
-    console.log('WHAAAAAT')
-    console.log(data.username)
-    console.log(data.password)
-    console.log(data.password2)
-    console.log('Signing up' + util.inspect(data, {showHidden: false, depth: null}))
     const result = await signupAPI(data)
-    console.log(JSON.stringify(result))
     if (!resultOK(result)) {
         return {type: LOGIN_AUTH_FAIL, errors: result.data}
     }

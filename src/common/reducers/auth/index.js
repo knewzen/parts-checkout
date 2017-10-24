@@ -5,7 +5,8 @@ import {
     LOGIN_AUTH_SUCCESS,
     SIGNUP_AUTH_PENDING,
     LOGOUT_AUTH_SUCCESS,
-    APPLICATION_INIT
+    APPLICATION_INIT,
+    AUTH_CLEAR_ERRORS
 } from 'actions'
 
 export const initialState = {
@@ -40,7 +41,12 @@ export function auth (state = initialState, action) {
             token
         }
     }
-
+    case AUTH_CLEAR_ERRORS: {
+        return {
+            ...state,
+            errors: {}
+        }
+    }
     case LOGIN_AUTH_PENDING:
     case SIGNUP_AUTH_PENDING:
     default:
