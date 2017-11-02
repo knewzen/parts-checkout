@@ -10,13 +10,15 @@ class Home extends Component {
         login: PropTypes.func.isRequired,
         errors: PropTypes.object.isRequired,
         isLoggedIn: PropTypes.bool.isRequired,
-        clearErrors: PropTypes.func.isRequired,
-        parts: PropTypes.object.isRequired
+        clearErrors: PropTypes.func.isRequired
     }
 
     render () {
+        const { login, errors } = this.props
+        const props = {login, errors}
+
         return (
-            <PartsGrid />
+            <PartsGrid {...props} />
         )
     }
 

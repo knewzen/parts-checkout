@@ -5,6 +5,7 @@ import {layout} from './layout'
 import {posts} from './posts'
 import {users} from './users'
 import {auth} from './auth'
+import {parts} from './parts'
 
 // Root reducer
 export default combineReducers({
@@ -12,7 +13,8 @@ export default combineReducers({
     me: combineReducers({auth}),
     entities: combineReducers({
         posts,
-        users
+        users,
+        parts
     }),
     routing: routerReducer
 })

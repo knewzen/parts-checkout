@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { Link } from 'react-router-dom' // , withRouter 
+import { Link } from 'react-router-dom' // , withRouter
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import {Icon, Menu} from 'semantic-ui-react' // Popup,
@@ -44,6 +44,7 @@ class Header extends Component {
                 </Menu.Item>
                 <Menu.Menu position='right'>
                     { !isLoggedIn && <Menu.Item name='Sign Up' as={Link} to='/signup' />}
+                    { isLoggedIn && <Menu.Item name='Admin' as={Link} to='/admin' />}
                     { isLoggedIn ? (
                         <Menu.Item name='logout' onClick={logout} />
                     ) : (
