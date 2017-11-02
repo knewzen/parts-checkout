@@ -57,6 +57,7 @@ export default class LoginComponent extends Component {
                 </Helmet>
                 <Grid.Row>
                     <Grid.Column tablet={10} mobile={16} computer={6}>
+                        {/* is there a better way to do this */}
                         <Form onSubmit={::this.handleSubmit} {...loginFormProps}>
                             {errors &&
                                 <Message

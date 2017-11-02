@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import PropTypes from 'prop-types'
 import {LOGIN_AUTH, LOGIN_AUTH_PENDING, AUTH_CLEAR_ERRORS} from 'actions'
-import PartsGrid from './components'
+import PartsGrid from './components/PartsGrid'
 // import { Redirect } from 'react-router-dom'
 
 class Home extends Component {
@@ -10,13 +10,13 @@ class Home extends Component {
         login: PropTypes.func.isRequired,
         errors: PropTypes.object.isRequired,
         isLoggedIn: PropTypes.bool.isRequired,
-        clearErrors: PropTypes.func.isRequired,
-        parts: PropTypes.object.isRequired
+        clearErrors: PropTypes.func.isRequired
     }
 
     render () {
         return (
             <PartsGrid />
+            // <div>Hello</div>
         )
     }
 

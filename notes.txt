@@ -1,3 +1,5 @@
 https://medium.com/@pshrmn/a-simple-react-router-v4-tutorial-7f23ff27adf
 
-- errors persist after routing to a new page
+-- Grid data
+  -- Add get grid data to server/db
+  -- user table is now users, make sure to change LOL

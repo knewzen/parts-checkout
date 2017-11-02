@@ -4,7 +4,7 @@ module.exports = {
     createUser ({username, hash}) {
         console.log(`Add user ${username} with hash ${hash}`)
         console.log(JSON.stringify({username, hash}))
-        return knex('user').insert({
+        return knex('users').insert({
             username,
             hash
         })
@@ -13,7 +13,7 @@ module.exports = {
     authUser ({username}) {
         console.log(`Ath user ${username}`)
         console.log(JSON.stringify({username}))
-        return knex('user').where({
+        return knex('users').where({
             username
         }).select('id', 'hash').first()
     }

@@ -2,9 +2,6 @@ import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import {Table, Grid} from 'semantic-ui-react'
 import {Helmet} from 'react-helmet'
-import _ from 'lodash'
-import {LoginButton} from './style'
-import {TextCenter} from 'styles/base'
 
 export default class PartsGrid extends Component {
     constructor (props) {
@@ -34,16 +31,6 @@ export default class PartsGrid extends Component {
     }
 
     render () {
-        const {username, password} = this.state
-        // Error from server
-        const {errors} = this.props
-        const loginFormProps = {error: !_.isEmpty(errors)}
-        // Login btn props
-        const loginBtnProps = {
-            content: 'Login',
-            icon: 'sign in'
-        }
-
         return (
             <Grid
                 verticalAlign="middle"

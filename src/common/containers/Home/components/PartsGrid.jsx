@@ -3,14 +3,11 @@ import {connect} from 'react-redux'
 import PropTypes from 'prop-types'
 import {Table, Grid} from 'semantic-ui-react'
 import {Helmet} from 'react-helmet'
-import _ from 'lodash'
-import {LoginButton} from './style'
-import {TextCenter} from 'styles/base'
 
 class Row extends Component {
     static propTypes = {
-        idx: PropTypes.int,
-        part: PropTypes.object
+        idx: PropTypes.number.isRequired,
+        part: PropTypes.object.isRequired
     }
     render () {
         const {idx, part} = this.props
@@ -36,7 +33,7 @@ class PartsGrid extends Component {
     static propTypes = {
         login: PropTypes.func,
         errors: PropTypes.object,
-        parts: PropTypes.object.isReq
+        parts: PropTypes.object.isRequired
     }
 
     handleSubmit = (e) => {
@@ -53,15 +50,8 @@ class PartsGrid extends Component {
     }
 
     render () {
-        const {username, password} = this.state
-        // Error from server
-        const {errors, parts} = this.props
-        const loginFormProps = {error: !_.isEmpty(errors)}
-        // Login btn props
-        const loginBtnProps = {
-            content: 'Login',
-            icon: 'sign in'
-        }
+        // parts list from server
+        const {parts} = this.props
 
         return (
             <Grid
